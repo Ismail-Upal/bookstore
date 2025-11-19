@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-blue-600">📚 Bookstore</a>
+                <div class="flex gap-4 items-center">
+                    <a href="/books" class="text-gray-700 hover:text-blue-600">Books</a>
+                    <a href="/cart" class="text-gray-700 hover:text-blue-600 relative">
+                        Cart <span id="cart-count" class="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 hidden">0</span>
+                    </a>
+                    <div id="user-menu" class="hidden">
+                        <a href="/customer/dashboard" class="text-gray-700 hover:text-blue-600">Dashboard</a>
+                        <button id="logout-btn" class="text-red-600 hover:text-red-700 ml-4">Logout</button>
+                    </div>
+                    <div id="guest-menu">
+                        <a href="/login" class="text-gray-700 hover:text-blue-600">Login</a>
+                        <a href="/register" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 ml-2">Sign Up</a>
+                    </div>
+                    <div id="admin-menu" class="hidden">
+                        <a href="/admin" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Admin Panel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to Our Bookstore</h1>
+            <p class="text-xl mb-8">Discover your next favorite book from our curated collection</p>
+            <a href="/books" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 inline-block">Browse Books</a>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">Featured Books</h2>
+        <div id="featured-books" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center py-8">
+                <div class="spinner mx-auto"></div>
+                <p class="mt-4 text-gray-600">Loading books...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Bookstore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/home.js"></script>
+</body>
+</html>
