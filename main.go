@@ -160,7 +160,12 @@ func main() {
         mux.HandleFunc("/api/admin/orders", handleAdminOrders)
         mux.HandleFunc("/api/admin/orders/", handleAdminOrderUpdate)
 
-        port := "5000"
+        // port := "5000"
+        port := os.Getenv("PORT")
+        if port == "" {
+        port = "5000"
+        }
+        //
         log.Printf("Server starting on port %s...", port)
         if err := http.ListenAndServe("0.0.0.0:"+port, mux); err != nil {
                 log.Fatal(err)
