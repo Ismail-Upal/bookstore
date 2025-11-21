@@ -188,9 +188,6 @@ Potential features to add:
 
 
 
-# create DB (if not exists)
-createdb -U postgres bookstore
-# or:
 psql -U postgres -c "CREATE DATABASE bookstore;"
 
 # create extension (run as superuser if needed)
